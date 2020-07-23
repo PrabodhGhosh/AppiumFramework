@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
-import util.CommonUtils;
+import resources.CommonUtils;
 
 public class FailedTest extends GeneralStoreBase{
 	
@@ -20,7 +20,7 @@ public class FailedTest extends GeneralStoreBase{
 		FailedTest ft = new FailedTest();
 		AndroidDriver< AndroidElement> driver = ft.capability("APIDemos");
 		String actual= driver.findElementByXPath("//android.widget.TextView[@index=8]").getText();
-		Assert.assertEquals(actual, commonUtils.getPropertyValue(testDataPath, "Preference"));
+		Assert.assertEquals(actual, commonUtils.getPropertyValue(testDataPath, "PreferenceMenu"));
 
 		
 	}

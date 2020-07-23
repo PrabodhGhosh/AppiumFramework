@@ -36,6 +36,10 @@ public class GeneralStoreBase {
 		prop.load(fis);
 		
 		
+		//Kill all node process
+		
+		Runtime.getRuntime().exec("taskkill /f /im node.exe");
+		System.out.println("Killed all node processes");
 		
 		// Start server before every test
 		service=  AppiumDriverLocalService.buildDefaultService();
@@ -79,7 +83,7 @@ public class GeneralStoreBase {
 			cap.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "io.appium.android.apis");
 			cap.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, ".ApiDemos");
 		}
-		ad = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), cap);
+		ad = new AndroidDriver<AndroidElement>(new URL("http://127.0.0.1:4723/wd/hub"), cap);
 		if (appName.equals("APIDemos")) {
 			ad.findElement(By.xpath("//android.widget.Button[@text='Continue']")).click();
 			Thread.sleep(1000);

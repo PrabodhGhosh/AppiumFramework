@@ -3,13 +3,14 @@
 <suite name="Suite">
 	<listeners>
 
-		<listener class-name="util.Listeners"></listener>
+		<listener class-name="resources.Listeners"></listener>
+		<listener class-name="resources.ExtentReporterNG"></listener>
 
 	</listeners>
 	<test thread-count="5" name="Test">
 		<classes>
 			<class
-				 name="com.appium.framework.AppiumJavaFramework.ContextSwitchDemo" />
+				 name="com.appium.framework.AppiumJavaFramework.ContextDemoTest" />
 			<class
 				name="com.appium.framework.AppiumJavaFramework.FirstTest" />
 			<class
